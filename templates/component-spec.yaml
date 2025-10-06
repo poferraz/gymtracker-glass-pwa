@@ -1,0 +1,69 @@
+# Component Specification Template
+# Use for planning individual reusable components
+
+component:
+  name: ""
+  category: "glass|feature|layout|form|utility"
+  purpose: ""
+  
+interface:
+  props:
+    - name: ""
+      type: ""
+      required: true|false
+      default: ""
+      description: ""
+  
+  events:
+    - name: ""
+      parameters: []
+      when_triggered: ""
+  
+design:
+  glass_properties:
+    background: "rgba()"
+    backdrop_blur: "8px|10px|16px|20px|30px"
+    border: "rgba()"
+    border_radius: "8px|12px|16px|20px|24px"
+    shadow: "sm|md|lg|xl|2xl"
+  
+  variants:
+    - name: "default|primary|success|warning|danger"
+      description: ""
+      modifications: ""
+  
+  states:
+    - name: "default|hover|active|focus|disabled|loading"
+      visual_changes: ""
+  
+  responsive:
+    mobile_adjustments: ""
+    tablet_adjustments: ""
+    desktop_adjustments: ""
+  
+  animations:
+    - trigger: ""
+      effect: ""
+      duration: "100ms|150ms|200ms|300ms|500ms"
+      easing: "ease-out|ease-in|ease-in-out"
+  
+accessibility:
+  role: ""
+  aria_attributes: []
+  keyboard_interactions: []
+  focus_behavior: ""
+  screen_reader_text: ""
+  
+usage_example: |
+  <ComponentName
+    prop1="value"
+    prop2={variable}
+    onEvent={handler}
+  >
+    Content
+  </ComponentName>
+  
+implementation_notes:
+  - ""
+  
+related_components: []
