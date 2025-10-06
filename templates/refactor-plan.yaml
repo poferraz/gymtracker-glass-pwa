@@ -1,0 +1,48 @@
+# Refactoring Plan Template
+# Use when improving existing code
+
+refactor:
+  target: ""
+  location: ""
+  reason: "performance|readability|maintainability|bug_fix"
+  priority: "high|medium|low"
+  
+current_state:
+  description: ""
+  issues:
+    - problem: ""
+      impact: ""
+  code_smells:
+    - ""
+  performance_metrics:
+    bundle_size: ""
+    render_time: ""
+    
+desired_state:
+  description: ""
+  improvements:
+    - ""
+  success_criteria:
+    - ""
+  
+approach:
+  steps:
+    - order: 1
+      action: ""
+      testing: ""
+      commit_message: ""
+  
+  breaking_changes: true|false
+  migration_needed: true|false
+  
+risks:
+  - risk: ""
+    mitigation: ""
+  
+testing_strategy:
+  before_tests:
+    - ""
+  after_tests:
+    - ""
+  
+rollback_plan: ""

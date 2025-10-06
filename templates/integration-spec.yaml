@@ -1,0 +1,61 @@
+# Integration Specification Template
+# Use for features that connect multiple systems/components
+
+integration:
+  name: ""
+  type: "service_worker|api|storage|external_library"
+  purpose: ""
+  
+source:
+  name: ""
+  version: ""
+  documentation_url: ""
+  
+target:
+  components: []
+  services: []
+  
+data_flow:
+  input:
+    source: ""
+    format: ""
+    validation: []
+  
+  processing:
+    steps: []
+    transformations: []
+  
+  output:
+    destination: ""
+    format: ""
+    
+error_handling:
+  network_failure: ""
+  timeout: ""
+  invalid_data: ""
+  rate_limiting: ""
+  
+caching_strategy:
+  cache_key: ""
+  ttl: ""
+  invalidation_rules: []
+  
+offline_behavior:
+  fallback: ""
+  queue_strategy: ""
+  sync_trigger: ""
+  
+security_considerations:
+  authentication: ""
+  data_sanitization: []
+  rate_limiting: ""
+  
+performance_impact:
+  bundle_size_increase: ""
+  network_requests: ""
+  optimization_strategies: []
+  
+testing_approach:
+  unit_tests: []
+  integration_tests: []
+  manual_tests: []

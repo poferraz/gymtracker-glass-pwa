@@ -1,0 +1,50 @@
+# Bug Fix Template
+# Use for tracking and fixing bugs
+
+bug:
+  title: ""
+  severity: "critical|high|medium|low"
+  discovered: "YYYY-MM-DD"
+  reported_by: ""
+  
+reproduction:
+  steps:
+    - ""
+  expected_behavior: ""
+  actual_behavior: ""
+  
+  environment:
+    browser: ""
+    device: ""
+    screen_size: ""
+    network_condition: ""
+  
+  frequency: "always|often|sometimes|rare"
+  
+investigation:
+  hypothesis: ""
+  root_cause: ""
+  affected_code:
+    file: ""
+    lines: ""
+    function: ""
+  
+  related_bugs: []
+  
+solution:
+  approach: ""
+  code_changes:
+    - file: ""
+      modification: ""
+  
+  testing:
+    - scenario: ""
+      verified: true|false
+  
+  side_effects: []
+  regression_risk: "high|medium|low"
+  
+prevention:
+  lesson_learned: ""
+  preventive_measures: []
+  documentation_updates: []
