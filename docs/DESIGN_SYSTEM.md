@@ -122,25 +122,38 @@ This design system creates a premium iOS 26 "Liquid Glass" aesthetic through lay
 }
 ```
 
+### Font Size Reference Table
+
+| Level | Desktop | Mobile | Weight | Line Height | Usage |
+|-------|---------|--------|--------|-------------|-------|
+| Display | 40px | 32px | 800 | 1.2 | Hero headings |
+| H1 | 32px | 28px | 700 | 1.2 | Page titles |
+| H2 | 24px | 22px | 600 | 1.3 | Section titles |
+| H3 | 20px | 20px | 600 | 1.4 | Subsection titles |
+| H4 | 18px | 18px | 500 | 1.4 | Card titles |
+| Body | 16px | 16px | 400 | 1.5 | Default text |
+| Small | 14px | 14px | 400 | 1.5 | Supporting text |
+| Tiny | 12px | 12px | 400 | 1.5 | Labels, captions |
+
 ---
 
 ## Spacing System
 
 ### Base Unit: 4px
 
-```css
---spacing-0: 0;
---spacing-1: 0.25rem;   /* 4px */
---spacing-2: 0.5rem;    /* 8px */
---spacing-3: 0.75rem;   /* 12px */
---spacing-4: 1rem;      /* 16px */
---spacing-5: 1.25rem;   /* 20px */
---spacing-6: 1.5rem;    /* 24px */
---spacing-8: 2rem;      /* 32px */
---spacing-10: 2.5rem;   /* 40px */
---spacing-12: 3rem;     /* 48px */
---spacing-16: 4rem;     /* 64px */
-```
+| Token | Value | Pixels | Common Usage |
+|-------|-------|--------|--------------|
+| `spacing-0` | 0 | 0px | Reset margins/padding |
+| `spacing-1` | 0.25rem | 4px | Tight spacing, badges |
+| `spacing-2` | 0.5rem | 8px | Button padding, small gaps |
+| `spacing-3` | 0.75rem | 12px | Input padding, card spacing |
+| `spacing-4` | 1rem | 16px | Standard spacing, card padding |
+| `spacing-5` | 1.25rem | 20px | Medium spacing |
+| `spacing-6` | 1.5rem | 24px | Large spacing, section gaps |
+| `spacing-8` | 2rem | 32px | XL spacing |
+| `spacing-10` | 2.5rem | 40px | XXL spacing |
+| `spacing-12` | 3rem | 48px | Section padding |
+| `spacing-16` | 4rem | 64px | Major section dividers |
 
 ### Mobile Safe Areas
 ```css
@@ -394,14 +407,15 @@ transition: box-shadow 0.15s var(--ease-out);
 
 ## Responsive Breakpoints
 
-```css
-/* Mobile first approach */
---breakpoint-sm: 375px;   /* Small phones */
---breakpoint-md: 430px;   /* iPhone Pro models */
---breakpoint-lg: 768px;   /* Tablets */
---breakpoint-xl: 1024px;  /* Desktop */
---breakpoint-2xl: 1280px; /* Large desktop */
-```
+| Breakpoint | Value | Target Devices | Usage |
+|------------|-------|----------------|-------|
+| `sm` | 375px | Small phones (iPhone SE) | Base mobile styles |
+| `md` | 430px | Standard phones (iPhone 14-16 Pro) | Primary mobile target |
+| `lg` | 768px | Tablets (iPad) | Tablet layouts |
+| `xl` | 1024px | Desktop | Desktop layouts |
+| `2xl` | 1280px | Large desktop | Wide screen optimizations |
+
+**Mobile-First Approach**: All base styles are for mobile. Use min-width media queries to enhance for larger screens.
 
 ---
 
