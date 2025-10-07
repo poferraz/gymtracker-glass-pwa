@@ -1,34 +1,101 @@
 import React from 'react';
+import { GlassCard, GlassButton, GlassInput, GlassBadge } from './components/glass';
 
 /**
  * App - Root application component
- * This is a placeholder that will be replaced during Phase 1
+ * Demonstrates the glass morphism design system
  */
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center p-4">
-      <div className="glass-card max-w-md w-full p-8 text-center">
-        <h1 className="text-4xl font-bold text-white mb-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <GlassCard className="max-w-2xl w-full p-8">
+        <h1 className="text-4xl font-bold mb-2">
           GymTracker Glass PWA
         </h1>
-        <p className="text-white/80 mb-6">
-          Phase 0 Complete - Development Environment Ready
+        <p className="text-white/80 mb-8">
+          Phase 1.2a: Glass Components ✅
         </p>
-        <div className="flex flex-col gap-3">
-          <div className="glass-badge mx-auto">
-            ✅ React 18.3.1
+        
+        {/* Design System Demo */}
+        <div className="space-y-6">
+          {/* Buttons */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Glass Buttons</h3>
+            <div className="flex flex-wrap gap-3">
+              <GlassButton>Default</GlassButton>
+              <GlassButton variant="primary">Primary</GlassButton>
+              <GlassButton variant="success">Success</GlassButton>
+              <GlassButton variant="danger">Danger</GlassButton>
+              <GlassButton disabled>Disabled</GlassButton>
+            </div>
           </div>
-          <div className="glass-badge mx-auto">
-            ✅ Vite Build System
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Button Sizes</h3>
+            <div className="flex flex-wrap items-center gap-3">
+              <GlassButton size="sm" variant="primary">Small</GlassButton>
+              <GlassButton size="md" variant="primary">Medium</GlassButton>
+              <GlassButton size="lg" variant="primary">Large</GlassButton>
+            </div>
           </div>
-          <div className="glass-badge mx-auto">
-            ✅ Tailwind CSS
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Nested Cards</h3>
+            <GlassCard variant="dark">
+              <h4 className="font-medium mb-2">Dark Variant Card</h4>
+              <p className="text-sm text-white/70 mb-3">
+                Cards can be nested for visual depth.
+              </p>
+              <GlassButton size="sm" variant="success">Action Button</GlassButton>
+            </GlassCard>
           </div>
-          <div className="glass-badge mx-auto">
-            ✅ PWA Ready
+          
+          {/* Input Fields */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Input Fields</h3>
+            <div className="space-y-3">
+              <GlassInput 
+                placeholder="Enter workout name..." 
+                label="Workout Name"
+              />
+              <GlassInput 
+                placeholder="Enter your email..." 
+                label="Email"
+                type="email"
+                required
+              />
+              <GlassInput 
+                placeholder="This field has an error" 
+                label="With Error"
+                error="This field is required"
+              />
+            </div>
+          </div>
+
+          {/* Badges */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Badges</h3>
+            <div className="flex flex-wrap gap-2 mb-3">
+              <GlassBadge>Default</GlassBadge>
+              <GlassBadge variant="primary">Primary</GlassBadge>
+              <GlassBadge variant="success">Completed</GlassBadge>
+              <GlassBadge variant="warning">Warning</GlassBadge>
+              <GlassBadge variant="danger">Error</GlassBadge>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <GlassBadge size="sm" variant="primary">Small</GlassBadge>
+              <GlassBadge size="md" variant="primary">Medium</GlassBadge>
+              <GlassBadge size="lg" variant="primary">Large</GlassBadge>
+              <GlassBadge 
+                variant="success" 
+                onRemove={() => alert('Badge removed!')}
+              >
+                Removable
+              </GlassBadge>
+            </div>
           </div>
         </div>
-      </div>
+      </GlassCard>
     </div>
   );
 }
