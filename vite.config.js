@@ -59,6 +59,11 @@ export default defineConfig({
       }
     })
   ],
+  server: {
+    port: 5174,
+    strictPort: true,
+    open: true
+  },
   build: {
     rollupOptions: {
       output: {
