@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development rules and standards (rules.md)
 - Comprehensive requirements document (requirements.md)
 - Glass morphism design system (DESIGN_SYSTEM.md)
+- YAML templates for vibe coding workflow (templates/)
 - Git repository initialization with main and develop branches
 
 ### Changed
