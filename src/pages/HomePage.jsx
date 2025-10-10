@@ -36,8 +36,7 @@ export default function HomePage() {
           interface.
         </p>
         <GlassButton variant="primary">
-          <Play width={24} height={24} className="mr-2" /> Start New
-          Workout
+          <Play width={24} height={24} className="mr-2" /> Start New Workout
         </GlassButton>
       </GlassCard>
 
@@ -57,8 +56,7 @@ export default function HomePage() {
           Total Sessions: {state.sessions.length}
         </p>
         <GlassButton onClick={handleCreateSession}>
-          <Play width={24} height={24} className="mr-2" /> Create Test
-          Session
+          <Play width={24} height={24} className="mr-2" /> Create Test Session
         </GlassButton>
       </GlassCard>
 
