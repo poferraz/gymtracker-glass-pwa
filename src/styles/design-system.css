@@ -370,6 +370,79 @@
     font-weight: 700;
     color: var(--text-primary);
   }
+
+  /* ==========================================
+     ACTIVE SESSION BANNER
+     ========================================== */
+
+  .active-session-banner {
+    margin: var(--space-lg);
+    padding: var(--space-lg);
+  }
+
+  .banner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+  }
+
+  .banner-info {
+    flex: 1;
+  }
+
+  .banner-info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .banner-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .meta-separator {
+    opacity: 0.5;
+  }
+
+  .banner-started {
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    margin: 0;
+  }
+
+  .banner-actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .banner-action-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 390px) {
+    .banner-actions {
+      flex-direction: column;
+    }
+
+    .banner-action-btn {
+      width: 100%;
+    }
+  }
 }
 
 @layer utilities {

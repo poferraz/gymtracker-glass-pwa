@@ -4,7 +4,8 @@
 import { useState, useEffect } from 'react';
 import { useWorkout } from '../../store';
 import { formatRelativeTime } from '../../utils';
-import { GlassCard, GlassButton } from '../glass';
+import { GlassCard, GlassButton, GlassBadge } from '../glass';
+import { Timer } from 'iconoir-react';
 
 export const ActiveSessionBanner = () => {
   const { state } = useWorkout();
@@ -49,19 +50,48 @@ export const ActiveSessionBanner = () => {
 
   if (!state.currentSession) return null;
 
+  const formatDuration = (minutes) => {
+    if (minutes < 60) return `${minutes}m`;
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return `${hours}h ${mins}m`;
+  };
+
   return (
-    <GlassCard variant="light" className="sticky top-0">
-      <div className="flex justify-between items-center">
-        <div>
-          <h3>Workout in Progress</h3>
-          <p>Started: {state.currentSession.startTime ? formatRelativeTime(new Date(state.currentSession.startTime)) : 'just now'}</p>
-          <p>Duration: {duration}</p>
-          <p>Exercises: {state.currentSession.exercises?.length || 0}</p>
+    <GlassCard className="active-session-banner">
+      <div className="banner-header">
+        <div className="banner-info">
+          <h3>{state.currentSession.templateName || 'Workout in Progress'}</h3>
+          <div className="banner-meta">
+            <span className="meta-item">
+              <Timer width={16} height={16} />
+              {formatDuration(duration)}
+            </span>
+            <span className="meta-separator">•</span>
+            <span className="meta-item">
+              {state.currentSession.exercises?.length || 0} exercises
+            </span>
+          </div>
+          <p className="banner-started">Started {formatRelativeTime(state.currentSession.startTime)}</p>
         </div>
-        <div className="flex gap-2">
-          <GlassButton onClick={() => console.log('View Details')}>View Details</GlassButton>
-          <GlassButton variant="danger" onClick={() => console.log('End Workout')}>End Workout</GlassButton>
-        </div>
+        <GlassBadge variant="success">Active</GlassBadge>
+      </div>
+
+      <div className="banner-actions">
+        <GlassButton 
+          variant="primary" 
+          onClick={() => console.log(`Navigate to /workout/${state.currentSession.id}`)}
+          className="banner-action-btn"
+        >
+          View Details
+        </GlassButton>
+        <GlassButton 
+          variant="danger" 
+          onClick={() => console.log('End Workout')}
+          className="banner-action-btn"
+        >
+          End Workout
+        </GlassButton>
       </div>
     </GlassCard>
   );
