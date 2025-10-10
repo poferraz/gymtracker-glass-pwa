@@ -72,21 +72,25 @@ export const ActiveSessionBanner = () => {
               {state.currentSession.exercises?.length || 0} exercises
             </span>
           </div>
-          <p className="banner-started">Started {formatRelativeTime(state.currentSession.startTime)}</p>
+          <p className="banner-started">
+            Started {formatRelativeTime(state.currentSession.startTime)}
+          </p>
         </div>
         <GlassBadge variant="success">Active</GlassBadge>
       </div>
 
       <div className="banner-actions">
-        <GlassButton 
-          variant="primary" 
-          onClick={() => console.log(`Navigate to /workout/${state.currentSession.id}`)}
+        <GlassButton
+          variant="primary"
+          onClick={() =>
+            console.log(`Navigate to /workout/${state.currentSession.id}`)
+          }
           className="banner-action-btn"
         >
           View Details
         </GlassButton>
-        <GlassButton 
-          variant="danger" 
+        <GlassButton
+          variant="danger"
           onClick={() => console.log('End Workout')}
           className="banner-action-btn"
         >

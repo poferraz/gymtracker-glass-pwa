@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AppLayout } from './components/layouts';
-import { GlassButton, GlassInput, GlassBadge, GlassPanel, GlassModal } from './components/glass';
+import {
+  GlassButton,
+  GlassInput,
+  GlassBadge,
+  GlassPanel,
+  GlassModal,
+} from './components/glass';
 import { useLocalStorage } from './hooks';
 import { HomePage, WorkoutsPage, CalendarPage, StatsPage } from './pages';
 
@@ -12,17 +18,12 @@ import { HomePage, WorkoutsPage, CalendarPage, StatsPage } from './pages';
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userName, setUserName] = useLocalStorage('demo_user_name', '');
-  
+
   return (
     <AppLayout>
       {/* Temporary navigation - will be replaced in 1.4b */}
-      <div className="mb-6 flex gap-4">
-        <a href="/" className="text-white hover:text-primary-400">Home</a>
-        <a href="/workouts" className="text-white hover:text-primary-400">Workouts</a>
-        <a href="/calendar" className="text-white hover:text-primary-400">Calendar</a>
-        <a href="/stats" className="text-white hover:text-primary-400">Stats</a>
-      </div>
-      
+      <div className="mb-6 flex gap-4">{/* Removed all links */}</div>
+
       {/* Route definitions */}
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -30,7 +31,7 @@ function App() {
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/stats" element={<StatsPage />} />
       </Routes>
-      
+
       {/* Design System Demo */}
       <div className="space-y-6">
         {/* Buttons */}
@@ -44,34 +45,40 @@ function App() {
             <GlassButton disabled>Disabled</GlassButton>
           </div>
         </div>
-        
+
         {/* Button Sizes */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Button Sizes</h3>
           <div className="flex flex-wrap items-center gap-3">
-            <GlassButton size="sm" variant="primary">Small</GlassButton>
-            <GlassButton size="md" variant="primary">Medium</GlassButton>
-            <GlassButton size="lg" variant="primary">Large</GlassButton>
+            <GlassButton size="sm" variant="primary">
+              Small
+            </GlassButton>
+            <GlassButton size="md" variant="primary">
+              Medium
+            </GlassButton>
+            <GlassButton size="lg" variant="primary">
+              Large
+            </GlassButton>
           </div>
         </div>
-        
+
         {/* Input Fields */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Input Fields</h3>
           <div className="space-y-3">
-            <GlassInput 
-              placeholder="Enter workout name..." 
+            <GlassInput
+              placeholder="Enter workout name..."
               label="Workout Name"
             />
-            <GlassInput 
-              placeholder="Enter your email..." 
+            <GlassInput
+              placeholder="Enter your email..."
               label="Email"
               type="email"
               required
             />
           </div>
         </div>
-        
+
         {/* Badges */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Badges</h3>
@@ -83,18 +90,21 @@ function App() {
             <GlassBadge variant="danger">Error</GlassBadge>
           </div>
         </div>
-        
+
         {/* Panel */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Glass Panel</h3>
-          <GlassPanel 
+          <GlassPanel
             title="Workout Stats"
             actions={
-              <GlassButton size="sm" variant="primary">View All</GlassButton>
+              <GlassButton size="sm" variant="primary">
+                View All
+              </GlassButton>
             }
           >
             <p className="text-white/80 mb-3">
-              Glass panels are perfect for larger content sections with optional headers and actions.
+              Glass panels are perfect for larger content sections with optional
+              headers and actions.
             </p>
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
@@ -112,19 +122,16 @@ function App() {
             </div>
           </GlassPanel>
         </div>
-        
+
         {/* Modal */}
         <div>
           <h3 className="text-lg font-semibold mb-3">Glass Modal</h3>
-          <GlassButton 
-            variant="primary" 
-            onClick={() => setIsModalOpen(true)}
-          >
+          <GlassButton variant="primary" onClick={() => setIsModalOpen(true)}>
             Open Modal
           </GlassButton>
         </div>
       </div>
-      
+
       {/* Modal Example */}
       <GlassModal
         isOpen={isModalOpen}
@@ -134,10 +141,11 @@ function App() {
       >
         <div className="space-y-4">
           <p className="text-white/80">
-            This is a glass morphism modal with blur effects and smooth animations.
+            This is a glass morphism modal with blur effects and smooth
+            animations.
           </p>
-          <GlassInput 
-            placeholder="Enter your name..." 
+          <GlassInput
+            placeholder="Enter your name..."
             label="Name"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
@@ -146,7 +154,7 @@ function App() {
             <GlassButton onClick={() => setIsModalOpen(false)}>
               Cancel
             </GlassButton>
-            <GlassButton 
+            <GlassButton
               variant="primary"
               onClick={() => {
                 alert('Welcome!');
@@ -158,25 +166,27 @@ function App() {
           </div>
         </div>
       </GlassModal>
-      
+
       {/* localStorage Demo */}
       <div className="mt-8">
         <h3 className="text-lg font-semibold mb-3">localStorage Hook Demo</h3>
         <div className="space-y-3">
-          <GlassInput 
-            placeholder="Enter your name..." 
+          <GlassInput
+            placeholder="Enter your name..."
             label="Your Name (persisted to localStorage)"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
           />
           {userName && (
             <p className="text-white/80">
-              Hello, <span className="font-semibold text-primary-400">{userName}</span>! 
-              Your name is saved in localStorage. Refresh the page to see it persist.
+              Hello,{' '}
+              <span className="font-semibold text-primary-400">{userName}</span>
+              ! Your name is saved in localStorage. Refresh the page to see it
+              persist.
             </p>
           )}
-          <GlassButton 
-            size="sm" 
+          <GlassButton
+            size="sm"
             variant="danger"
             onClick={() => setUserName('')}
           >

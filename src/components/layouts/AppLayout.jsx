@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from './Navigation';
-import { Zap } from 'iconoir-react';
+import { Flash } from 'iconoir-react';
 
 /**
  * AppLayout - Main layout wrapper with navigation
@@ -12,7 +12,7 @@ export default function AppLayout({ children }) {
   return (
     <div className="min-h-screen pb-safe">
       <header className="app-header">
-        <Zap width={28} height={28} className="app-logo" />
+        <Flash width={28} height={28} className="app-logo" />
         <span className="app-title">GymTracker</span>
       </header>
       <main className="max-w-6xl mx-auto p-4 pt-16">{children}</main>
