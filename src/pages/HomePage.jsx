@@ -6,7 +6,7 @@ import {
   SessionStartButton,
   ActiveSessionBanner,
 } from '../components/features';
-import { PlayOutline } from 'iconoir-react';
+import { Play } from 'iconoir-react';
 
 /**
  * HomePage - Landing/Dashboard view
@@ -36,7 +36,7 @@ export default function HomePage() {
           interface.
         </p>
         <GlassButton variant="primary">
-          <PlayOutline width={24} height={24} className="mr-2" /> Start New
+          <Play width={24} height={24} className="mr-2" /> Start New
           Workout
         </GlassButton>
       </GlassCard>
@@ -57,7 +57,7 @@ export default function HomePage() {
           Total Sessions: {state.sessions.length}
         </p>
         <GlassButton onClick={handleCreateSession}>
-          <PlayOutline width={24} height={24} className="mr-2" /> Create Test
+          <Play width={24} height={24} className="mr-2" /> Create Test
           Session
         </GlassButton>
       </GlassCard>
