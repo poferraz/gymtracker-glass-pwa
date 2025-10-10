@@ -26,22 +26,20 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bottom-navigation glass-card p-3">
+    <nav className="bottom-navigation">
       <div className="flex items-center justify-between h-full">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
-                isActive
-                  ? 'bg-glass-medium text-white shadow-lg'
-                  : 'text-white/70 hover:text-white hover:bg-glass-light'
+              `flex flex-col items-center gap-1 text-sm transition-all duration-200 ${
+                isActive ? 'active' : ''
               }`
             }
           >
-            <span className="text-lg">{item.icon}</span>
-            <span className="hidden sm:inline">{item.label}</span>
+            {item.icon}
+            <span>{item.label}</span>
           </NavLink>
         ))}
       </div>
