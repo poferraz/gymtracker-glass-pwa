@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HomeSimple, Gym, Calendar, BarChart } from 'iconoir-react';
+import { HomeSimple, Gym, Calendar, StatsReport } from 'iconoir-react';
 
 /**
  * Navigation - Glass morphism navigation bar
@@ -21,7 +21,7 @@ export default function Navigation() {
     {
       path: '/stats',
       label: 'Stats',
-      icon: <BarChart width={24} height={24} />,
+      icon: <StatsReport width={24} height={24} />,
     },
   ];
 
