@@ -1,15 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { HomeSimple, Gym, Calendar, BarChart } from 'iconoir-react';
 
 /**
  * Navigation - Glass morphism navigation bar
  */
 export default function Navigation() {
   const navItems = [
-    { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/workouts', label: 'Workouts', icon: '💪' },
-    { path: '/calendar', label: 'Calendar', icon: '📅' },
-    { path: '/stats', label: 'Stats', icon: '📊' }
+    { path: '/', label: 'Home', icon: <HomeSimple width={24} height={24} /> },
+    { path: '/workouts', label: 'Workouts', icon: <Gym width={24} height={24} /> },
+    { path: '/calendar', label: 'Calendar', icon: <Calendar width={24} height={24} /> },
+    { path: '/stats', label: 'Stats', icon: <BarChart width={24} height={24} /> }
   ];
   
   return (
