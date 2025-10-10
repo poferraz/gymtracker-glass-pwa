@@ -8,20 +8,32 @@ import { HomeSimple, Gym, Calendar, BarChart } from 'iconoir-react';
 export default function Navigation() {
   const navItems = [
     { path: '/', label: 'Home', icon: <HomeSimple width={24} height={24} /> },
-    { path: '/workouts', label: 'Workouts', icon: <Gym width={24} height={24} /> },
-    { path: '/calendar', label: 'Calendar', icon: <Calendar width={24} height={24} /> },
-    { path: '/stats', label: 'Stats', icon: <BarChart width={24} height={24} /> }
+    {
+      path: '/workouts',
+      label: 'Workouts',
+      icon: <Gym width={24} height={24} />,
+    },
+    {
+      path: '/calendar',
+      label: 'Calendar',
+      icon: <Calendar width={24} height={24} />,
+    },
+    {
+      path: '/stats',
+      label: 'Stats',
+      icon: <BarChart width={24} height={24} />,
+    },
   ];
-  
+
   return (
     <nav className="glass-card p-3 mb-6">
       <div className="flex items-center justify-between">
         {/* Logo/Brand */}
         <div className="flex items-center gap-2">
-          <span className="text-2xl">🏋️</span>
+          <Gym width={24} height={24} className="text-2xl" />
           <span className="font-bold text-xl hidden sm:inline">GymTracker</span>
         </div>
-        
+
         {/* Navigation Links */}
         <div className="flex gap-2">
           {navItems.map((item) => (
