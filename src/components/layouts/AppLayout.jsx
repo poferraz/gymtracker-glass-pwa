@@ -9,13 +9,11 @@ import Navigation from './Navigation';
  */
 export default function AppLayout({ children }) {
   return (
-    <div className="min-h-screen p-4 pb-safe">
-      <div className="max-w-6xl mx-auto">
-        <Navigation />
-        <main>
-          {children}
-        </main>
-      </div>
+    <div className="min-h-screen pb-safe">
+      <main className="max-w-6xl mx-auto p-4">
+        {children}
+      </main>
+      <Navigation />
     </div>
   );
 }
