@@ -1,68 +1,73 @@
 import React from 'react';
-import { GlassCard, GlassButton, GlassPanel } from '../components/glass';
-import { useWorkout } from '../store';
-import { createSessionAction } from '../store/actions';
-import {
-  SessionStartButton,
-  ActiveSessionBanner,
-} from '../components/features';
-import { Play } from 'iconoir-react';
+import { useNavigate } from 'react-router-dom';
+import { Gym, Calendar, StatsReport, Plus } from 'iconoir-react';
+import { GlassCard } from '../components/glass';
+import { SessionStartButton } from '../components/features/SessionStartButton';
+import { ActiveSessionBanner } from '../components/features/ActiveSessionBanner';
 
 /**
  * HomePage - Landing/Dashboard view
  */
 export default function HomePage() {
-  const { state, dispatch } = useWorkout();
-
-  const handleCreateSession = () => {
-    const now = new Date();
-    dispatch(
-      createSessionAction(
-        now.toISOString().split('T')[0],
-        now.toISOString(),
-        'Test session'
-      )
-    );
-  };
+  const navigate = useNavigate();
 
   return (
-    <div className="space-y-6">
+    <div className="home-page space-y-6">
+      {/* Hero Section */}
+      <div className="hero-section text-center py-10">
+        <h1 className="hero-title text-4xl font-bold mb-4">Ready to Train?</h1>
+        <p className="hero-subtitle text-lg text-white/80 mb-6">
+          Track your progress, crush your goals
+        </p>
+        <SessionStartButton />
+      </div>
+
+      {/* Active Session Banner */}
       <ActiveSessionBanner />
 
-      <GlassCard>
-        <h1 className="text-3xl font-bold mb-2">Welcome to GymTracker</h1>
-        <p className="text-white/80 mb-4">
-          Track your workouts with style using our premium glass morphism
-          interface.
-        </p>
-        <GlassButton variant="primary">
-          <Play width={24} height={24} className="mr-2" /> Start New Workout
-        </GlassButton>
-      </GlassCard>
+      {/* Quick Access Section */}
+      <div className="quick-access-section">
+        <h2 className="text-xl font-semibold mb-4">Quick Access</h2>
+        <div className="quick-access-grid grid grid-cols-2 gap-4">
+          <GlassCard
+            onClick={() => navigate('/workouts')}
+            className="flex flex-col items-center justify-center p-4"
+          >
+            <Gym width={24} height={24} className="mb-2" />
+            <span>Workouts</span>
+          </GlassCard>
+          <GlassCard
+            onClick={() => navigate('/calendar')}
+            className="flex flex-col items-center justify-center p-4"
+          >
+            <Calendar width={24} height={24} className="mb-2" />
+            <span>Calendar</span>
+          </GlassCard>
+          <GlassCard
+            onClick={() => navigate('/stats')}
+            className="flex flex-col items-center justify-center p-4"
+          >
+            <StatsReport width={24} height={24} className="mb-2" />
+            <span>Stats</span>
+          </GlassCard>
+          <GlassCard
+            onClick={() => navigate('/workouts')}
+            className="flex flex-col items-center justify-center p-4"
+          >
+            <Plus width={24} height={24} className="mb-2" />
+            <span>New Template</span>
+          </GlassCard>
+        </div>
+      </div>
 
-      <GlassCard>
-        <h2 className="text-xl font-semibold mb-3">Recent Activity</h2>
+      {/* Recent Workouts Section */}
+      <div className="recent-workouts-section">
+        <h2 className="text-xl font-semibold mb-4">Recent Sessions</h2>
         <p className="text-white/60">
           No recent workouts. Start your first workout to see activity here.
         </p>
-      </GlassCard>
-
-      <GlassCard>
-        <h2 className="text-xl font-semibold mb-3">Session Management</h2>
-        <p className="text-white/60 mb-4">
-          Manage your workout sessions with ease.
-        </p>
-        <p className="text-white/60 mb-4">
-          Total Sessions: {state.sessions.length}
-        </p>
-        <GlassButton onClick={handleCreateSession}>
-          <Play width={24} height={24} className="mr-2" /> Create Test Session
-        </GlassButton>
-      </GlassCard>
-
-      <GlassPanel title="Start Your Workout" className="mt-6">
-        <SessionStartButton />
-      </GlassPanel>
+        {/* TODO: Fetch and display last 3 completed sessions */}
+      </div>
     </div>
   );
 }
