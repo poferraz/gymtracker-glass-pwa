@@ -59,15 +59,6 @@ export default function HomePage() {
           </GlassCard>
         </div>
       </div>
-
-      {/* Recent Workouts Section */}
-      <div className="recent-workouts-section">
-        <h2 className="text-xl font-semibold mb-4">Recent Sessions</h2>
-        <p className="text-white/60">
-          No recent workouts. Start your first workout to see activity here.
-        </p>
-        {/* TODO: Fetch and display last 3 completed sessions */}
-      </div>
     </div>
   );
 }
