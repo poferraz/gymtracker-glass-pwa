@@ -1,4 +1,4 @@
-# Gymtracker-Glass-Pwa
+# gymtracker-glass-pwa
 
 <p align="center">
   <strong>gymtracker-glass-pwa - A web application</strong>
